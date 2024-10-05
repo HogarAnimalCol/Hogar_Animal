@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <h1>Error</h1>
+    <p>{{ error }}</p>
+    <a href="{% url 'lista_mascotas' %}">Volver a la lista de mascotas</a>
+</main>
+{% endblock %}

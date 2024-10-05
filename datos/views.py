@@ -166,9 +166,12 @@ def editar_mascota(request, pk):
 def eliminar_mascota(request, mascota_id):
     mascota = get_object_or_404(Mascota, pk=mascota_id)
     if request.method == 'POST':
-        mascota.delete()
-        return redirect('lista_mascotas')
-
+        try:
+            mascota.delete()
+            return redirect('lista_mascotas')
+        except Exception as e:
+            print(f"Error al eliminar la mascota: {e}")  # Esto ayudará a identificar el problema
+            return render(request, 'error.html', {'error': str(e)})
     return render(request, 'confirmar_eliminar.html', {'mascota': mascota})
 
 
