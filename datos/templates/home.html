@@ -2,40 +2,30 @@
 {% load static %}
 {% block content %}
 
-<body>
-    <div class="margen">
-      {% extends "base.html" %}
-      {% load static %}
-      {% block content %}
-      
-      <div class="container my-5">
-          <div class="row">
-              <div class="col-md-6 text-center">
-                  <img class="img-fluid" src="{% static 'img/LOGO.PNG' %}" alt="Logo de la Veterinaria Hogar Animal">
-              </div>
-              <div class="col-md-6">
-                  <p class="textobonito">
-                      Bienvenido a nuestra Veterinaria Hogar Animal, aquí ofrecemos distintos
-                      servicios para tu mascota. Nos alegra que te encuentres aquí, somos una
-                      clínica veterinaria.
-                  </p>
-              </div>
-          </div>
-          <div class="slide-container">
-              <div class="slide">
-                  <ul>
-                      <li><img class="img-fluid" src="{% static 'img/Car1.jpg' %}" alt="Imagen1"></li>
-                      <li><img class="img-fluid" src="{% static 'img/Car2.jpg' %}" alt="Imagen2"></li>
-                      <li><img class="img-fluid" src="{% static 'img/Car3.jpg' %}" alt="Imagen3"></li>
-                      <li><img class="img-fluid" src="{% static 'img/Car4.jpg' %}" alt="Imagen4"></li>
-                  </ul>
-              </div>
-          </div>
-          <hr>
-          <p class="bottom">
-              Creado por: Hogar Animal™
-          </p>
-      </div>
-      
-      {% endblock %}
-      
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <img class="img-fluid" src="{% static 'img/LOGO.PNG' %}" alt="Logo de la Veterinaria Hogar Animal">
+        </div>
+        <div class="col-md-6">
+            <p class="textobonito">
+                Bienvenido a nuestra Veterinaria Hogar Animal, aquí ofrecemos distintos
+                servicios para tu mascota. Nos alegra que te encuentres aquí, somos una
+                clínica veterinaria.
+            </p>
+        </div>
+    </div>
+    <div class="slide-container">
+        <div class="slide">
+            <ul>
+                <li><img class="img-fluid" src="{% static 'img/Car1.jpg' %}" alt="Imagen1"></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <p class="bottom">
+        Creado por: Hogar Animal™
+    </p>
+</div>
+
+{% endblock %}
