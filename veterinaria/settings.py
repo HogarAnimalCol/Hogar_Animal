@@ -83,8 +83,8 @@ WSGI_APPLICATION = 'veterinaria.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres.postgres@localhost/postgres',
-        conn_max_age=600       
+        default='postgresql://veterinaria_gd0e_user:fZzEPtvlb4YbcnRbKsfJS2tX6iyienhH@dpg-cs0fcr0gph6c73a7cgjg-a:5432/veterinaria',
+        conn_max_age=600    
     )        
 }
 
