@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Hogar Animal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/LOGO.PNG' %}" />
+    <script src="{% static 'js/nav.js' %}"></script>
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+      <img class="imglogo" src="{% static 'img/LOGO.PNG' %}" alt="Logo">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'citas' %}">Citas Agendadas</a></li>
+        <li><a href="{% url 'citas_completed' %}">Citas Completadas</a></li>
+        <li><a href="{% url 'create_cita' %}">Crear Cita</a></li>
+        <li><a href="{% url 'lista_mascotas' %}">Lista de Mascotas</a></li>
+        <li><a href="{% url 'agregar_mascota' %}">Agregar Mascota</a></li>
+        <li>
+          <a href="/logout">Cerrar sesión</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="/signin">Iniciar sesión</a>
+        </li>
+        <li>
+          <a href="/signup">Registrarse</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <a onclick="abrirNav()" href="#" class="menu"><button>Menu</button></a>
+
+    <div class="sobre" id="menu-movil">
+      <a onclick="cerrarNav()" href="#" class="cerrado">&times;</a>
+      <div class="sobre-contenido">
+        <li><a href="/">Inicio</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'citas' %}">Citas Agendadas</a></li>
+        <li><a href="{% url 'citas_completed' %}">Citas Completadas</a></li>
+        <li><a href="{% url 'create_cita' %}">Crear Cita</a></li>
+        <li><a href="{% url 'lista_mascotas' %}">Lista de Mascotas</a></li>
+        <li><a href="{% url 'agregar_mascota' %}">Agregar Mascota</a></li>
+        <li>
+          <a href="/logout">Cerrar sesión</a>
+        </li>
+        {% else %}
+        <li>
+          <a href="/signin">Iniciar sesión</a>
+        </li>
+        <li>
+          <a href="/signup">Registrarse</a>
+        </li>
+        {% endif %}
+      </div>
+    </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

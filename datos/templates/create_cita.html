@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Editar Cita{% else %}Solicita tu cita{% endif %}</h1>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <form action="{% url 'create_cita' %}" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }} <!-- Renderiza el formulario con todos los campos -->
+
+        <!-- Solo mostrar el campo 'completed' si está presente en el formulario, es decir, solo para administradores -->
+        {% if form.completed %}
+            <div class="form-group">
+                {{ form.completed.label_tag }} {{ form.completed }}
+            </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+{% endblock %}
+

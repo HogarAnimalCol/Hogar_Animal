@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <h1>Lista de Mascotas</h1>
+    <form method="GET" action="{% url 'lista_mascotas' %}">
+        <input type="text" name="q" placeholder="Buscar mascotas...">
+        <button type="submit">Buscar</button>
+    </form>
+    <a href="{% url 'agregar_mascota' %}">Agregar Mascota</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Especie</th>
+                <th>Raza</th>
+                <th>Dueño</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mascota in mascotas %}
+            <tr>
+                <td>{{ mascota.nombre }}</td>
+                <td>{{ mascota.especie }}</td>
+                <td>{{ mascota.raza }}</td>
+                <td>{{ mascota.dueño.username }}</td>
+                <td>
+                    <a href="{% url 'editar_mascota' mascota.id %}">Editar</a>
+                    <form action="{% url 'eliminar_mascota' mascota.id %}" method="POST" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" onclick="return confirm('¿Estás seguro de que deseas eliminar esta mascota?');">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}

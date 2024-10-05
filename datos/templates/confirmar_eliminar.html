@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <h1>Eliminar Mascota: {{ mascota.nombre }}</h1>
+    <p>¿Estás seguro de que deseas eliminar esta mascota?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+    <a href="{% url 'lista_mascotas' %}">Cancelar</a>
+</main>
+{% endblock %}

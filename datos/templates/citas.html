@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <h1>Citas Asignadas</h1>
+    <form method="GET" action="{% url 'citas' %}">
+        <input type="text" name="q" placeholder="Buscar citas...">
+        <button type="submit">Buscar</button>
+    </form>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Usuario</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cita in citas %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'cita_detail' cita.id %}">
+                                {{ cita.title }}
+                            </a>
+                        </td>
+                        <td>{{ cita.description }}</td>
+                        <td>{{ cita.user.username }}</td>
+                        <td>{{ cita.date|date:'M j Y, H:i' }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">No hay citas asignadas.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+{% endblock %}

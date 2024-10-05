@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>{{cita.title}}</h1>
+
+    {{error}}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>
+            Actualizar
+        </button>
+    </form>
+
+    <form action="{% url 'complete_cita' cita.id %}" method="POST">
+        {% csrf_token %}
+        <button>
+            Completar
+        </button>
+
+    <form action="{% url 'delete_cita' cita.id %}" method="POST">
+        {% csrf_token %}
+        <button>
+            Borrar
+        </button>
+    </form>
+
+{% endblock  %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <h1>Registro</h1>
+    <br>
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <form method="POST" class="card card-body">
+        {% csrf_token %}
+        {{ form.as_p }}  
+        <button type="submit">
+            Registrarse
+        </button>
+    </form>
+</main>
+{% endblock %}

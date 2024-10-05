@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap')
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.header{
+  background-color: #dcd1bd;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 85px;
+  padding: 5px 10%;
+  border-radius: 20px;
+}
+
+.logo{
+  margin-right: auto;
+}
+
+.imglogo{
+  height: 70px;
+  width: auto;
+}
+
+.nav-links{
+  list-style: none;
+}
+
+.nav-links li{
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.nav-links a{
+  font-size: 700;
+  color: #faf4eb;
+}
+
+.nav-links li:hover{
+  transform: scale(1.1);
+}
+
+.nav-links li a:hover{
+  color:#c3b192;
+}
+
+.menu{
+  display: none;
+}
+
+header .boton button,
+.header .menu button{
+  margin-left: 20px;
+  font-weight: 700;
+  color: f5ca4c;
+  padding: 9px 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+header .boton button:hover,
+.header .menu button:hover{
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px){
+  .nav-links, .boton{
+    display: none;
+  }
+  .menu{
+    display: inherit;
+  }
+}
+
+html {
+  background-color: #c3b192;
+}
+body {
+  width: auto;
+  margin: 0 auto;
+  background-color: #dcadad40;
+  padding: 10px 50px 50px 50px;
+  border: 11px solid rgb(77, 67, 28);
+  border-top: none;
+  border-bottom: none;
+  .titulo{
+    text-align: center;
+    margin: auto;
+    padding: 10px 0;
+    color: #a37b39;
+    text-shadow: 3px 3px 1px rgb(221, 217, 217);
+  }
+  .img-container {
+    text-align: center;
+    width: 50%;
+    object-fit: cover;
+  }
+  .textobonito{
+    padding: 20px;
+    height: 50%;  
+  }
+  .slide-container{
+    padding: 20px;
+    height: 50%;  
+    display: grid;
+    place-content: center;
+  }
+  .slide{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .slide ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    
+    animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92)
+  }
+  .texto-container{
+    display: block;
+    width: 50%;
+  }
+  .container1{
+    display: flex;
+    overflow: hidden;
+  }
+  @keyframes slide {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100;}
+    45% {margin-left: -100;}
+
+    50% {margin-left: -200;}
+    70% {margin-left: -200;}
+
+    75% {margin-left: -300;}
+    100% {margin-left: -300;}
+  }
+}
+
+h2 {
+  margin: auto;
+  padding: 20px 0;
+  color: #f5bc5f;
+  text-shadow: 3px 3px 1px rgb(221, 217, 217);
+}
+
+h1 {
+  margin:auto;
+  color:#3a2503;
+}
+
+strong {
+  margin:auto;
+  color:#3a2503;
+}
+
+p {
+  margin: 30px;
+  color: rgb(0, 0, 0);
+  font-size: x-large;
+}
+
+a {
+  font-size: x-large;
+  color:rgb(0, 0, 0);
+}
+
+li {
+  font-size: larger;
+  color:rgb(216, 154, 60);
+}
+
+button{
+  background-color: #f5bc5f;
+  border-color: #a37b39;
+}
+
+img{
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+/*table*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+table th, table td {
+  padding: 12px 15px;
+}
+
+table th {
+  background-color: #f5bc5f;
+  color: white;
+}
+
+table tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table tr:hover {
+  background-color: #f5ca4c;
+}
+
+
+
+
+/*Nav*/
+
+.header a{
+  text-decoration: none;
+}
+
+.header .sobre{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(33, 49, 63, 0.95);
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
+}
+
+.header .sobre .sobre-contenido{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .sobre a{
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: all 0.3s ease 0s;
+  font-weight: 700;
+  color: #885c1a;
+}
+
+.header .sobre a:hover,
+.header .sobre a:focus{
+  color:aqua
+}
+
+.header .sobre .cerrado{
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 65px;
+}
+
+@media screen and (min-height:340px){
+  .header .overlay a{
+    font-size: 20px;
+  }
+
+  .header .overlay .close{
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+.bottom{
+  font-size: 10px;
+  text-align: center;
+}

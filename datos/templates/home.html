@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<body>
+    <div class="margen">
+    <section class="sect1" class="sect">
+    <!-- <h1 class="titulo">
+      Hogar Animal
+    </h1> -->
+    <br />
+    <div class="container1">
+      <div class="img-container">
+        <img src="{% static 'img/LOGO.PNG' %}" alt="Logo de la Veterinaria "HOGAR ANIMAL" />
+      </div>
+      <br />
+      <div class="texto-container">
+        <p class="textobonito">
+          Bienvenido a nuestra Veterinaria Hogar Animal, aquí ofrecemos distintos
+          servicios para tu mascota. Nos alegra que te encuentres aquí, somos una
+          clínica veterinaria
+        </p>
+        <div class="slide-container">
+          <div class="slide">
+            <ul>
+              <li><img src="{% static 'img/Car1.jpg' %}" alt="Imagen1"></li>
+              <li><img src="{% static 'img/Car2.jpg' %}" alt="Imagen2"></li>
+              <li><img src="{% static 'img/Car3.jpg' %}" alt="Imagen3"></li>
+              <li><img src="{% static 'img/Car4.jpg' %}" alt="Imagen4"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="margen">
+      <section class="sect1" class="sect">
+      <hr />
+    </div>
+    <p class="bottom">
+      Creado por: Hogar Animal™
+    </p>
+{% endblock %}

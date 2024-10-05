@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <h1>Editar Mascota: {{ mascota.nombre }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Actualizar</button>
+    </form>
+</main>
+{% endblock %}
